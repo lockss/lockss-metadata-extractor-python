@@ -101,10 +101,6 @@ class MdupdatesApi(object):
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
 
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
 
@@ -200,10 +196,6 @@ class MdupdatesApi(object):
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
 
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
 
@@ -226,15 +218,15 @@ class MdupdatesApi(object):
     def get_mdupdates(self, **kwargs):  # noqa: E501
         """Get a list of currently active jobs  # noqa: E501
 
-        Get a list of all currently active jobs (no parameters) or a list of the currently active jobs in a page defined by the page index and size  # noqa: E501
+        Get a list of all currently active jobs or a pageful of the list defined by the continuation token and size  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_mdupdates(async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param int page: The identifier of the page of jobs to be returned
         :param int limit: The number of jobs per page
+        :param str continuation_token: The continuation token of the next page of jobs to be returned
         :return: JobPageInfo
                  If the method is called asynchronously,
                  returns the request thread.
@@ -249,21 +241,21 @@ class MdupdatesApi(object):
     def get_mdupdates_with_http_info(self, **kwargs):  # noqa: E501
         """Get a list of currently active jobs  # noqa: E501
 
-        Get a list of all currently active jobs (no parameters) or a list of the currently active jobs in a page defined by the page index and size  # noqa: E501
+        Get a list of all currently active jobs or a pageful of the list defined by the continuation token and size  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_mdupdates_with_http_info(async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param int page: The identifier of the page of jobs to be returned
         :param int limit: The number of jobs per page
+        :param str continuation_token: The continuation token of the next page of jobs to be returned
         :return: JobPageInfo
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'limit']  # noqa: E501
+        all_params = ['limit', 'continuation_token']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -284,10 +276,10 @@ class MdupdatesApi(object):
         path_params = {}
 
         query_params = []
-        if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
         if 'limit' in params:
             query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'continuation_token' in params:
+            query_params.append(('continuationToken', params['continuation_token']))  # noqa: E501
 
         header_params = {}
 
@@ -297,10 +289,6 @@ class MdupdatesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
@@ -396,10 +384,6 @@ class MdupdatesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting

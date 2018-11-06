@@ -16,8 +16,8 @@ import re  # noqa: F401
 
 import six
 
-from lockss_metadata_extractor.lockss-metadata-extractor-python.job import Job  # noqa: F401,E501
-from lockss_metadata_extractor.lockss-metadata-extractor-python.page_info import PageInfo  # noqa: F401,E501
+from lockss_metadata_extractor.models.job import Job  # noqa: F401,E501
+from lockss_metadata_extractor.models.page_info import PageInfo  # noqa: F401,E501
 
 
 class JobPageInfo(object):

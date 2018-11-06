@@ -1,7 +1,6 @@
 # coding: utf-8
 
 # flake8: noqa
-
 """
     LOCKSS Metadata Extraction Service REST API
 
@@ -15,14 +14,7 @@
 
 from __future__ import absolute_import
 
-# import apis into sdk package
-from lockss_metadata_extractor.api.mdupdates_api import MdupdatesApi
-from lockss_metadata_extractor.api.status_api import StatusApi
-
-# import ApiClient
-from lockss_metadata_extractor.api_client import ApiClient
-from lockss_metadata_extractor.configuration import Configuration
-# import models into sdk package
+# import models into model package
 from lockss_metadata_extractor.models.api_status import ApiStatus
 from lockss_metadata_extractor.models.au import Au
 from lockss_metadata_extractor.models.job import Job

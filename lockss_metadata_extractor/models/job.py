@@ -16,8 +16,8 @@ import re  # noqa: F401
 
 import six
 
-from lockss_metadata_extractor.lockss-metadata-extractor-python.au import Au  # noqa: F401,E501
-from lockss_metadata_extractor.lockss-metadata-extractor-python.status import Status  # noqa: F401,E501
+from lockss_metadata_extractor.models.au import Au  # noqa: F401,E501
+from lockss_metadata_extractor.models.status import Status  # noqa: F401,E501
 
 
 class Job(object):

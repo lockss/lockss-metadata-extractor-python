@@ -24,7 +24,7 @@ import six
 from six.moves.urllib.parse import quote
 
 from lockss_metadata_extractor.configuration import Configuration
-import lockss_metadata_extractor.lockss-metadata-extractor-python
+import lockss_metadata_extractor.models
 from lockss_metadata_extractor import rest
 
 
@@ -258,7 +258,7 @@ class ApiClient(object):
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(lockss_metadata_extractor.lockss-metadata-extractor-python, klass)
+                klass = getattr(lockss_metadata_extractor.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)

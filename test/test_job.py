@@ -16,7 +16,7 @@ from __future__ import absolute_import
 import unittest
 
 import lockss_metadata_extractor
-from lockss_metadata_extractor.lockss-metadata-extractor-python.job import Job  # noqa: E501
+from lockss_metadata_extractor.models.job import Job  # noqa: E501
 from lockss_metadata_extractor.rest import ApiException
 
 

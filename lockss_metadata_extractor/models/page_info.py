@@ -33,7 +33,7 @@ class PageInfo(object):
     swagger_types = {
         'total_count': 'int',
         'results_per_page': 'int',
-        'current_page': 'int',
+        'continuation_token': 'str',
         'cur_link': 'str',
         'next_link': 'str'
     }
@@ -41,24 +41,24 @@ class PageInfo(object):
     attribute_map = {
         'total_count': 'totalCount',
         'results_per_page': 'resultsPerPage',
-        'current_page': 'currentPage',
+        'continuation_token': 'continuationToken',
         'cur_link': 'curLink',
         'next_link': 'nextLink'
     }
 
-    def __init__(self, total_count=None, results_per_page=None, current_page=None, cur_link=None, next_link=None):  # noqa: E501
+    def __init__(self, total_count=None, results_per_page=None, continuation_token=None, cur_link=None, next_link=None):  # noqa: E501
         """PageInfo - a model defined in Swagger"""  # noqa: E501
 
         self._total_count = None
         self._results_per_page = None
-        self._current_page = None
+        self._continuation_token = None
         self._cur_link = None
         self._next_link = None
         self.discriminator = None
 
         self.total_count = total_count
         self.results_per_page = results_per_page
-        self.current_page = current_page
+        self.continuation_token = continuation_token
         self.cur_link = cur_link
         if next_link is not None:
             self.next_link = next_link
@@ -114,29 +114,29 @@ class PageInfo(object):
         self._results_per_page = results_per_page
 
     @property
-    def current_page(self):
-        """Gets the current_page of this PageInfo.  # noqa: E501
+    def continuation_token(self):
+        """Gets the continuation_token of this PageInfo.  # noqa: E501
 
-        The current page number  # noqa: E501
+        The continuation token  # noqa: E501
 
-        :return: The current_page of this PageInfo.  # noqa: E501
-        :rtype: int
+        :return: The continuation_token of this PageInfo.  # noqa: E501
+        :rtype: str
         """
-        return self._current_page
+        return self._continuation_token
 
-    @current_page.setter
-    def current_page(self, current_page):
-        """Sets the current_page of this PageInfo.
+    @continuation_token.setter
+    def continuation_token(self, continuation_token):
+        """Sets the continuation_token of this PageInfo.
 
-        The current page number  # noqa: E501
+        The continuation token  # noqa: E501
 
-        :param current_page: The current_page of this PageInfo.  # noqa: E501
-        :type: int
+        :param continuation_token: The continuation_token of this PageInfo.  # noqa: E501
+        :type: str
         """
-        if current_page is None:
-            raise ValueError("Invalid value for `current_page`, must not be `None`")  # noqa: E501
+        if continuation_token is None:
+            raise ValueError("Invalid value for `continuation_token`, must not be `None`")  # noqa: E501
 
-        self._current_page = current_page
+        self._continuation_token = continuation_token
 
     @property
     def cur_link(self):

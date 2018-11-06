@@ -55,7 +55,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -108,17 +108,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_mdupdates**
-> JobPageInfo get_mdupdates(page=page, limit=limit)
+> JobPageInfo get_mdupdates(limit=limit, continuation_token=continuation_token)
 
 Get a list of currently active jobs
 
-Get a list of all currently active jobs (no parameters) or a list of the currently active jobs in a page defined by the page index and size
+Get a list of all currently active jobs or a pageful of the list defined by the continuation token and size
 
 ### Example
 ```python
@@ -135,12 +135,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = lockss_metadata_extractor.MdupdatesApi(lockss_metadata_extractor.ApiClient(configuration))
-page = 1 # int | The identifier of the page of jobs to be returned (optional) (default to 1)
 limit = 50 # int | The number of jobs per page (optional) (default to 50)
+continuation_token = 'continuation_token_example' # str | The continuation token of the next page of jobs to be returned (optional)
 
 try:
     # Get a list of currently active jobs
-    api_response = api_instance.get_mdupdates(page=page, limit=limit)
+    api_response = api_instance.get_mdupdates(limit=limit, continuation_token=continuation_token)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling MdupdatesApi->get_mdupdates: %s\n" % e)
@@ -150,8 +150,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| The identifier of the page of jobs to be returned | [optional] [default to 1]
  **limit** | **int**| The number of jobs per page | [optional] [default to 50]
+ **continuation_token** | **str**| The continuation token of the next page of jobs to be returned | [optional] 
 
 ### Return type
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
